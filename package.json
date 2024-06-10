@@ -1,0 +1,25 @@
+{
+  "name": "game-core",
+  "version": "1.0.0",
+  "description": "All your games and launchers in one place.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ividrine/game-core.git"
+  },
+  "keywords": [
+    "gaming",
+    "game",
+    "gaming",
+    "hub"
+  ],
+  "author": "Isaac Vidrine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ividrine/game-core/issues"
+  },
+  "homepage": "https://github.com/ividrine/game-core#readme"
+}
