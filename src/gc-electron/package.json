@@ -1,9 +1,9 @@
 {
-  "name": "game-core-electron",
+  "name": "gc-electron",
   "version": "1.0.0",
   "description": "game core electron app",
-  "main": "index.js",
   "scripts": {
+    "dev": "webpack --config webpack.dev.js && electron ./dist/main.js",
     "build": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
     "clean": "rm -rf dist",

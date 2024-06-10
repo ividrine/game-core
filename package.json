@@ -2,8 +2,16 @@
   "name": "game-core",
   "version": "1.0.0",
   "description": "All your games and launchers in one place.",
-  "main": "index.js",
+  "main": "src/gc-electron/dist/main.js",
+  "workspaces": [
+    "src/gc-electron",
+    "src/gc-react"
+  ],
   "scripts": {
+    "dev:electron": "npm run dev -w gc-electron",
+    "dev:react": "npm run dev -w gc-react",
+    "build-electron": "npm run build -w gc-electron",
+    "build-react": "npm run build -w gc-react",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +29,54 @@
   "bugs": {
     "url": "https://github.com/ividrine/game-core/issues"
   },
-  "homepage": "https://github.com/ividrine/game-core#readme"
+  "homepage": "https://github.com/ividrine/game-core#readme",
+  "build": {
+    "appId": "com.game.core.app",
+    "productName": "Game Core",
+    "directories": {
+      "buildResources": "resources"
+    },
+    "files": [
+      "src/gc_react/dist/**/*",
+      "src/gc_electron/dist/**/*",
+      "resources/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/app.env",
+        "to": "app.env"
+      },
+      {
+        "from": "resources/logo.png",
+        "to": "logo.png"
+      }
+    ],
+    "publish": {
+      "provider": "s3",
+      "bucket": "knowledge-canvas"
+    },
+    "afterSign": "resources/notarize.js",
+    "mac": {
+      "category": "public.app-category.education",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "Resources/entitlements.mac.plist",
+      "entitlementsInherit": "Resources/entitlements.mac.plist",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "darkModeSupport": true
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  }
 }

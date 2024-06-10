@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  watch: false,
   entry: {
     main: path.join(__dirname, "src", "main.ts"),
     preload: path.join(__dirname, "src", "preload.ts"),
