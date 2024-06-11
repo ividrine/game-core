@@ -2,7 +2,6 @@ const share: any = (global as any).share;
 
 const WindowService = () => {
   share.ipcMain.on("window_minimize", (_: any) => {
-    console.log("Minimizing");
     const mainWindow = share.BrowserWindow.getAllWindows()[0];
     mainWindow?.minimize();
   });
