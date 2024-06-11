@@ -16,6 +16,6 @@
     "resolveJsonModule": true,
     "preserveConstEnums": true
   },
-  "include": ["src/**/*", "./../kc_shared/**/*"],
+  "include": ["src/**/*", "./../gc-shared/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
