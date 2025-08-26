@@ -1,2 +1,2 @@
 # game-core
-All your games and launchers in one place.
+All your games in one place.
